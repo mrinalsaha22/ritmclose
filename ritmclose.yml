@@ -1,0 +1,34 @@
+- name: Close the RITM
+  hosts: localhost
+  gather_facts: no
+  connection: local
+  vars:
+     req_item_number: RITM0010029
+     # ansible_python_interpreter: /usr/bin/python3.6
+  tasks:
+  
+  - name: updating the final notes
+    servicenow.servicenow.snow_record:
+        state: present
+        table: sc_req_item
+        username: "admin"
+        password: "Cq8AlqODRgd2"
+        instance: "dev86612"
+        number: "{{ req_item_number }}"
+    
+        data:
+          work_notes: All changes has been sucessfully done and closing the RITM
+          state: 2 #code for implement 
+
+  - name: Closing the Requested Item
+    servicenow.servicenow.snow_record:
+        state: present
+        table: sc_req_item
+        username: "admin"
+        password: "Cq8AlqODRgd2"
+        instance: "dev86612"
+        number: "{{ req_item_number }}"
+    
+        data:
+          work_notes: Change Closed
+          state: 3 #code for implement 
