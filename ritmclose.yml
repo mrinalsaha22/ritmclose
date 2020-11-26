@@ -2,8 +2,10 @@
   hosts: localhost
   gather_facts: no
   connection: local
+  collections:
+    servicenow.servicenow
   vars:
-     req_item_number: RITM0010029
+    req_item_number: RITM0010029
      # ansible_python_interpreter: /usr/bin/python3.6
  
 
@@ -11,7 +13,7 @@
   tasks:
   
   - name: updating the final notes
-    servicenow.servicenow.snow_record:
+    snow_record:
         state: present
         table: sc_req_item
         username: "admin"
@@ -24,7 +26,7 @@
           state: 2 #code for implement 
 
   - name: Closing the Requested Item
-    servicenow.servicenow.snow_record:
+    snow_record:
         state: present
         table: sc_req_item
         username: "admin"
