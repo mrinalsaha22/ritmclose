@@ -5,6 +5,9 @@
   vars:
      req_item_number: RITM0010029
      # ansible_python_interpreter: /usr/bin/python3.6
+ 
+
+     
   tasks:
   
   - name: updating the final notes
