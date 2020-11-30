@@ -4,8 +4,8 @@
   connection: local
   
   
-  #collections:
-  #  servicenow.servicenow
+  collections:
+    servicenow.servicenow
   vars:
     req_item_number: RITM0010029
      # ansible_python_interpreter: /usr/bin/python3.6
