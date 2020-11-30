@@ -13,7 +13,7 @@
   tasks:
   
   - name: updating the final notes
-    snow_record:
+    servicenow.servicenow.snow_record:
         state: present
         table: sc_req_item
         username: "admin"
@@ -26,7 +26,7 @@
           state: 2 #code for implement 
 
   - name: Closing the Requested Item
-    snow_record:
+    servicenow.servicenow.snow_record:
         state: present
         table: sc_req_item
         username: "admin"
